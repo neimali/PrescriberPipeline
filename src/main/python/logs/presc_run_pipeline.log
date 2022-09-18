@@ -1,0 +1,307 @@
+"09-Sep-22 15:49:37" - root - INFO - get_spark_object() is started. The' PROD 'envn is used
+"09-Sep-22 15:50:10" - root - INFO - Spark Object is crated ...
+"09-Sep-22 15:50:17" - validations - INFO - Validate the Spark object by printing Current Date - [Row(current_date()=datetime.date(2022, 9, 9))]
+"09-Sep-22 15:50:17" - validations - INFO - Spark object is validated. Spark Object is ready
+"09-Sep-22 15:50:19" - presc_run_data_ingest - INFO - The load_files() Function is started...
+"09-Sep-22 15:50:22" - presc_run_data_ingest - INFO - The input File PrescPipeline/staging/dimension_city is loaded to the dataframe.
+"09-Sep-22 15:50:24" - presc_run_data_ingest - INFO - The load_files() Function is started...
+"13-Sep-22 15:43:26" - root - INFO - get_spark_object() is started. The' PROD 'envn is used
+"13-Sep-22 15:44:00" - root - INFO - Spark Object is crated ...
+"13-Sep-22 15:44:06" - validations - INFO - Validate the Spark object by printing Current Date - [Row(current_date()=datetime.date(2022, 9, 13))]
+"13-Sep-22 15:44:06" - validations - INFO - Spark object is validated. Spark Object is ready
+"13-Sep-22 15:44:08" - presc_run_data_ingest - INFO - The load_files() Function is started...
+"13-Sep-22 15:44:12" - presc_run_data_ingest - INFO - The input File PrescPipeline/staging/dimension_city is loaded to the dataframe.
+"13-Sep-22 15:44:14" - presc_run_data_ingest - INFO - The load_files() Function is started...
+"13-Sep-22 15:45:11" - presc_run_data_ingest - INFO - The input File PrescPipeline/staging/fact is loaded to the dataframe.
+"13-Sep-22 15:45:11" - validations - INFO - The DataFrame validation by count df_count() is started for Dataframe df_city ...
+"13-Sep-22 15:45:13" - validations - INFO - The DataFrame count is 28338.
+"13-Sep-22 15:45:13" - validations - INFO - The DataFrame Validation by count df_count() is completed.
+"13-Sep-22 15:45:13" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_city
+"13-Sep-22 15:45:13" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 15:45:14" - validations - INFO - 
+ 	city    city_ascii state_id            state_name  county_fips           county_name      lat       lng  population  density             timezone                                               zips
+    New York      New York       NY              New York        36061              New York  40.6943  -73.9249    18713220    10715     America/New_York  11229 11226 11225 11224 11222 11221 11220 1138...
+ Los Angeles   Los Angeles       CA            California         6037           Los Angeles  34.1139 -118.4068    12750807     3276  America/Los_Angeles  90291 90293 90292 91316 91311 90037 90031 9000...
+     Chicago       Chicago       IL              Illinois        17031                  Cook  41.8373  -87.6862     8604203     4574      America/Chicago  60018 60649 60641 60640 60643 60642 60645 6064...
+       Miami         Miami       FL               Florida        12086            Miami-Dade  25.7839  -80.2102     6445545     5019     America/New_York  33129 33125 33126 33127 33128 33149 33144 3314...
+      Dallas        Dallas       TX                 Texas        48113                Dallas  32.7936  -96.7662     5743938     1526      America/Chicago  75287 75098 75233 75254 75251 75252 75253 7503...
+Philadelphia  Philadelphia       PA          Pennsylvania        42101          Philadelphia  40.0077  -75.1339     5649300     4554     America/New_York  19154 19151 19150 19153 19152 19102 19103 1910...
+     Houston       Houston       TX                 Texas        48201                Harris  29.7863  -95.3889     5464251     1399      America/Chicago  77069 77068 77061 77060 77063 77062 77065 7706...
+     Atlanta       Atlanta       GA               Georgia        13121                Fulton  33.7627  -84.4224     5449398     1441     America/New_York  30334 30331 30332 30309 30308 30305 30307 3030...
+  Washington    Washington       DC  District of Columbia        11001  District of Columbia  38.9047  -77.0163     5379184     4457     America/New_York  20010 20011 20012 20015 20228 20520 20307 2041...
+      Boston        Boston       MA         Massachusetts        25025               Suffolk  42.3188  -71.0846     4688346     5532     America/New_York  02120 02121 02122 02124 02125 02126 02127 0212...
+"13-Sep-22 15:45:14" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 15:45:14" - validations - INFO - The DataFrame validation by count df_count() is started for Dataframe df_fact ...
+"13-Sep-22 15:45:26" - validations - INFO - The DataFrame count is 24964300.
+"13-Sep-22 15:45:26" - validations - INFO - The DataFrame Validation by count df_count() is completed.
+"13-Sep-22 15:45:26" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_fact
+"13-Sep-22 15:45:26" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 15:45:26" - validations - INFO - 
+ 	npi nppes_provider_last_org_name nppes_provider_first_name nppes_provider_city nppes_provider_state specialty_description description_flag                  drug_name            generic_name  bene_count  total_claim_count  total_30_day_fill_count  total_day_supply  total_drug_cost  bene_count_ge65 bene_count_ge65_suppress_flag  total_claim_count_ge65 ge65_suppress_flag  total_30_day_fill_count_ge65  total_day_supply_ge65  total_drug_cost_ge65 years_of_exp
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S       ATORVASTATIN CALCIUM    ATORVASTATIN CALCIUM         NaN                 13                     15.0               450           139.32              NaN                             *                    13.0               None                          15.0                  450.0                139.32       = 45.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S          CIPROFLOXACIN HCL       CIPROFLOXACIN HCL         NaN                 11                     11.0                96            80.99              NaN                             *                     NaN                  *                           NaN                    NaN                   NaN       = 43.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S        DOXYCYCLINE HYCLATE     DOXYCYCLINE HYCLATE        20.0                 20                     20.0               199           586.12              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 33.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S                    ELIQUIS                APIXABAN         NaN                 17                     17.0               510          6065.02              NaN                             *                    17.0               None                          17.0                  510.0               6065.02       = 44.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S                 FUROSEMIDE              FUROSEMIDE        12.0                 17                     17.0               405            45.76              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 55.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S            HYDRALAZINE HCL         HYDRALAZINE HCL         NaN                 16                     16.0               420           169.48              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 36.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S  ISOSORBIDE MONONITRATE ER  ISOSORBIDE MONONITRATE        16.0                 33                     35.0              1005           372.63              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 54.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S               LEVOFLOXACIN            LEVOFLOXACIN        26.0                 26                     26.0               159           222.41              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 53.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S                 LISINOPRIL              LISINOPRIL        14.0                 31                     32.0               960           129.24              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 35.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S        METOPROLOL TARTRATE     METOPROLOL TARTRATE        14.0                 33                     37.0              1050           183.29             14.0                          None                    33.0               None                          37.0                 1050.0                183.29       = 51.0
+"13-Sep-22 15:45:26" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 15:45:26" - presc_run_data_preprocessing - INFO - perfom_data_clean() is started ...
+"13-Sep-22 15:49:56" - presc_run_data_preprocessing - INFO - perform_data_clean is completed.
+"13-Sep-22 15:49:56" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_city_sel
+"13-Sep-22 15:49:56" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 15:49:56" - validations - INFO - 
+ 	city state_id            state_name           county_name  population                                               zips
+    NEW YORK       NY              NEW YORK              NEW YORK    18713220  11229 11226 11225 11224 11222 11221 11220 1138...
+ LOS ANGELES       CA            CALIFORNIA           LOS ANGELES    12750807  90291 90293 90292 91316 91311 90037 90031 9000...
+     CHICAGO       IL              ILLINOIS                  COOK     8604203  60018 60649 60641 60640 60643 60642 60645 6064...
+       MIAMI       FL               FLORIDA            MIAMI-DADE     6445545  33129 33125 33126 33127 33128 33149 33144 3314...
+      DALLAS       TX                 TEXAS                DALLAS     5743938  75287 75098 75233 75254 75251 75252 75253 7503...
+PHILADELPHIA       PA          PENNSYLVANIA          PHILADELPHIA     5649300  19154 19151 19150 19153 19152 19102 19103 1910...
+     HOUSTON       TX                 TEXAS                HARRIS     5464251  77069 77068 77061 77060 77063 77062 77065 7706...
+     ATLANTA       GA               GEORGIA                FULTON     5449398  30334 30331 30332 30309 30308 30305 30307 3030...
+  WASHINGTON       DC  DISTRICT OF COLUMBIA  DISTRICT OF COLUMBIA     5379184  20010 20011 20012 20015 20228 20520 20307 2041...
+      BOSTON       MA         MASSACHUSETTS               SUFFOLK     4688346  02120 02121 02122 02124 02125 02126 02127 0212...
+"13-Sep-22 15:49:56" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 15:49:56" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_fact_sel
+"13-Sep-22 15:49:56" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 15:51:13" - validations - INFO - 
+ 	presc_id     presc_city presc_state              presc_spclt  years_of_exp                       drug_name  trx_cnt  total_day_supply  total_drug_cost country_name presc_fullname
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            46                      PREDNISONE       32               220           105.85          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            40                      CEPHALEXIN       12               117            89.43          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            32                    AZITHROMYCIN       14                76           186.00          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            48                     AMOXICILLIN       20               200           114.84          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            51          FLUTICASONE PROPIONATE       15               570           160.94          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            32               CIPROFLOXACIN HCL       11                88            59.09          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            37  AMOXICILLIN-CLAVULANATE POTASS       16               154           227.62          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            39   SULFAMETHOXAZOLE-TRIMETHOPRIM       22               191           106.78          USA   DIANA BURICK
+-2147477479      TERRYTOWN          LA  Obstetrics & Gynecology            51                     FLUCONAZOLE       26               216           230.50          USA     IAN NGUYEN
+-2147471036         TEMPLE          TX      Physician Assistant            34                METFORMIN HCL ER       11               960           196.02          USA    ERIKA LEIGH
+"13-Sep-22 15:51:13" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 15:51:13" - validations - INFO - The DateFame Schema Validation for Dataframe df_fact_sel...
+"13-Sep-22 15:51:13" - root - INFO - The DataFame df_fact_sel schema is: 
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(presc_id,IntegerType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(presc_city,StringType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(presc_state,StringType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(presc_spclt,StringType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(years_of_exp,IntegerType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(drug_name,StringType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(trx_cnt,IntegerType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(total_day_supply,IntegerType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(total_drug_cost,DoubleType,true)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(country_name,StringType,false)
+"13-Sep-22 15:51:13" - validations - INFO - 	StructField(presc_fullname,StringType,false)
+"13-Sep-22 15:51:13" - validations - INFO - The DataFrame Schema Validation is Completed.
+"13-Sep-22 15:51:13" - presc_run_data_transform - INFO - Transform - city_report() is started...
+"13-Sep-22 15:51:13" - presc_run_data_transform - INFO - Transform - city_report() is completed...
+"13-Sep-22 15:51:13" - presc_run_data_transform - INFO - Transform - top_5_Prescribers() is started...
+"13-Sep-22 15:51:14" - presc_run_data_transform - INFO - Transform - top_5_Prescribers() is completed...
+"13-Sep-22 15:51:14" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_city_final
+"13-Sep-22 15:51:14" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 15:52:19" - validations - INFO - 
+ 	city  state_name     county_name  population  zip_counts  trx_counts  presc_counts
+      ANAHEIM  CALIFORNIA          ORANGE      350365          16     1588424          1030
+TRAVERSE CITY    MICHIGAN  GRAND TRAVERSE       50522           3      617013           566
+MUSCLE SHOALS     ALABAMA         COLBERT       14575           2      137660            49
+    BRENTWOOD   TENNESSEE      WILLIAMSON       42783           2      135778           164
+     PEARLAND       TEXAS        BRAZORIA      122460           5      194291           185
+     PATERSON  NEW JERSEY         PASSAIC      145233          15      345999           225
+      SALINAS  CALIFORNIA        MONTEREY      190972           5      459092           413
+   ROMEOVILLE    ILLINOIS            WILL       39746           2        9417            17
+         SACO       MAINE            YORK       19964           1       84365            56
+       OVIEDO     FLORIDA        SEMINOLE       41860           3      172910           108
+"13-Sep-22 15:52:19" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 15:52:19" - validations - INFO - The DateFame Schema Validation for Dataframe df_city_final...
+"13-Sep-22 15:52:19" - root - INFO - The DataFame df_city_final schema is: 
+"13-Sep-22 15:52:19" - validations - INFO - 	StructField(city,StringType,true)
+"13-Sep-22 15:52:19" - validations - INFO - 	StructField(state_name,StringType,true)
+"13-Sep-22 15:52:19" - validations - INFO - 	StructField(county_name,StringType,true)
+"13-Sep-22 15:52:19" - validations - INFO - 	StructField(population,IntegerType,true)
+"13-Sep-22 15:52:19" - validations - INFO - 	StructField(zip_counts,IntegerType,true)
+"13-Sep-22 15:52:19" - validations - INFO - 	StructField(trx_counts,LongType,true)
+"13-Sep-22 15:52:19" - validations - INFO - 	StructField(presc_counts,LongType,false)
+"13-Sep-22 15:52:19" - validations - INFO - The DataFrame Schema Validation is Completed.
+"13-Sep-22 15:52:19" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_presc_final
+"13-Sep-22 15:52:19" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 15:53:44" - validations - INFO - 
+ 	presc_id     presc_fullname presc_state country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost
+2036256032        TODD SUMNER          AA          USA            33       62               148           356.28
+2036256032        TODD SUMNER          AA          USA            38       60               385           258.33
+-2046463267     GEORGE CASSIDY          AA          USA            49       45               180           208.76
+2036408029        RYAN MEHRER          AA          USA            45       38               244           151.01
+-2117083349   CATHERINE ROGERS          AA          USA            49       35              1050           261.30
+2076581050          ULKER TOK          AZ          USA            35     3242            114116        160195.15
+2056377625  ANDREW RABINOWITZ          AZ          USA            31     3132            216274         76028.99
+-2066947266       JASON LEVINE          AZ          USA            44     2323             88055         32106.45
+-1672033807      NEIL ATODARIA          AZ          USA            42     2281            148209         50318.98
+-2117454907        RAVI BHALLA          AZ          USA            33     2081            101348        125539.09
+"13-Sep-22 15:53:44" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 15:53:44" - validations - INFO - The DateFame Schema Validation for Dataframe df_presc_final...
+"13-Sep-22 15:53:44" - root - INFO - The DataFame df_presc_final schema is: 
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(presc_id,IntegerType,true)
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(presc_fullname,StringType,false)
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(presc_state,StringType,true)
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(country_name,StringType,false)
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(years_of_exp,IntegerType,true)
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(trx_cnt,IntegerType,true)
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(total_day_supply,IntegerType,true)
+"13-Sep-22 15:53:44" - validations - INFO - 	StructField(total_drug_cost,DoubleType,true)
+"13-Sep-22 15:53:44" - validations - INFO - The DataFrame Schema Validation is Completed.
+"13-Sep-22 15:53:44" - presc_run_data_extraction - INFO - Extraction - extract_files() is started...
+"13-Sep-22 15:54:42" - presc_run_data_extraction - INFO - Extraction - extract_files() is completed...
+"13-Sep-22 15:54:42" - presc_run_data_extraction - INFO - Extraction - extract_files() is started...
+"13-Sep-22 15:56:21" - presc_run_data_extraction - INFO - Extraction - extract_files() is completed...
+"13-Sep-22 15:56:21" - root - INFO - presc_run_pipeline.py is Completed.
+"13-Sep-22 16:25:43" - root - INFO - get_spark_object() is started. The' PROD 'envn is used
+"13-Sep-22 16:26:16" - root - INFO - Spark Object is crated ...
+"13-Sep-22 16:26:23" - validations - INFO - Validate the Spark object by printing Current Date - [Row(current_date()=datetime.date(2022, 9, 13))]
+"13-Sep-22 16:26:23" - validations - INFO - Spark object is validated. Spark Object is ready
+"13-Sep-22 16:26:25" - presc_run_data_ingest - INFO - The load_files() Function is started...
+"13-Sep-22 16:26:28" - presc_run_data_ingest - INFO - The input File PrescPipeline/staging/dimension_city is loaded to the dataframe.
+"13-Sep-22 16:26:30" - presc_run_data_ingest - INFO - The load_files() Function is started...
+"13-Sep-22 16:27:28" - presc_run_data_ingest - INFO - The input File PrescPipeline/staging/fact is loaded to the dataframe.
+"13-Sep-22 16:27:28" - validations - INFO - The DataFrame validation by count df_count() is started for Dataframe df_city ...
+"13-Sep-22 16:27:30" - validations - INFO - The DataFrame count is 28338.
+"13-Sep-22 16:27:30" - validations - INFO - The DataFrame Validation by count df_count() is completed.
+"13-Sep-22 16:27:30" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_city
+"13-Sep-22 16:27:30" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 16:27:31" - validations - INFO - 
+ 	city    city_ascii state_id            state_name  county_fips           county_name      lat       lng  population  density             timezone                                               zips
+    New York      New York       NY              New York        36061              New York  40.6943  -73.9249    18713220    10715     America/New_York  11229 11226 11225 11224 11222 11221 11220 1138...
+ Los Angeles   Los Angeles       CA            California         6037           Los Angeles  34.1139 -118.4068    12750807     3276  America/Los_Angeles  90291 90293 90292 91316 91311 90037 90031 9000...
+     Chicago       Chicago       IL              Illinois        17031                  Cook  41.8373  -87.6862     8604203     4574      America/Chicago  60018 60649 60641 60640 60643 60642 60645 6064...
+       Miami         Miami       FL               Florida        12086            Miami-Dade  25.7839  -80.2102     6445545     5019     America/New_York  33129 33125 33126 33127 33128 33149 33144 3314...
+      Dallas        Dallas       TX                 Texas        48113                Dallas  32.7936  -96.7662     5743938     1526      America/Chicago  75287 75098 75233 75254 75251 75252 75253 7503...
+Philadelphia  Philadelphia       PA          Pennsylvania        42101          Philadelphia  40.0077  -75.1339     5649300     4554     America/New_York  19154 19151 19150 19153 19152 19102 19103 1910...
+     Houston       Houston       TX                 Texas        48201                Harris  29.7863  -95.3889     5464251     1399      America/Chicago  77069 77068 77061 77060 77063 77062 77065 7706...
+     Atlanta       Atlanta       GA               Georgia        13121                Fulton  33.7627  -84.4224     5449398     1441     America/New_York  30334 30331 30332 30309 30308 30305 30307 3030...
+  Washington    Washington       DC  District of Columbia        11001  District of Columbia  38.9047  -77.0163     5379184     4457     America/New_York  20010 20011 20012 20015 20228 20520 20307 2041...
+      Boston        Boston       MA         Massachusetts        25025               Suffolk  42.3188  -71.0846     4688346     5532     America/New_York  02120 02121 02122 02124 02125 02126 02127 0212...
+"13-Sep-22 16:27:31" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 16:27:31" - validations - INFO - The DataFrame validation by count df_count() is started for Dataframe df_fact ...
+"13-Sep-22 16:27:42" - validations - INFO - The DataFrame count is 24964300.
+"13-Sep-22 16:27:42" - validations - INFO - The DataFrame Validation by count df_count() is completed.
+"13-Sep-22 16:27:42" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_fact
+"13-Sep-22 16:27:42" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 16:27:42" - validations - INFO - 
+ 	npi nppes_provider_last_org_name nppes_provider_first_name nppes_provider_city nppes_provider_state specialty_description description_flag                  drug_name            generic_name  bene_count  total_claim_count  total_30_day_fill_count  total_day_supply  total_drug_cost  bene_count_ge65 bene_count_ge65_suppress_flag  total_claim_count_ge65 ge65_suppress_flag  total_30_day_fill_count_ge65  total_day_supply_ge65  total_drug_cost_ge65 years_of_exp
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S       ATORVASTATIN CALCIUM    ATORVASTATIN CALCIUM         NaN                 13                     15.0               450           139.32              NaN                             *                    13.0               None                          15.0                  450.0                139.32       = 45.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S          CIPROFLOXACIN HCL       CIPROFLOXACIN HCL         NaN                 11                     11.0                96            80.99              NaN                             *                     NaN                  *                           NaN                    NaN                   NaN       = 43.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S        DOXYCYCLINE HYCLATE     DOXYCYCLINE HYCLATE        20.0                 20                     20.0               199           586.12              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 33.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S                    ELIQUIS                APIXABAN         NaN                 17                     17.0               510          6065.02              NaN                             *                    17.0               None                          17.0                  510.0               6065.02       = 44.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S                 FUROSEMIDE              FUROSEMIDE        12.0                 17                     17.0               405            45.76              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 55.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S            HYDRALAZINE HCL         HYDRALAZINE HCL         NaN                 16                     16.0               420           169.48              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 36.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S  ISOSORBIDE MONONITRATE ER  ISOSORBIDE MONONITRATE        16.0                 33                     35.0              1005           372.63              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 54.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S               LEVOFLOXACIN            LEVOFLOXACIN        26.0                 26                     26.0               159           222.41              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 53.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S                 LISINOPRIL              LISINOPRIL        14.0                 31                     32.0               960           129.24              NaN                             #                     NaN                  #                           NaN                    NaN                   NaN       = 35.0
+2006000252                    ENKESHAFI                   ARDALAN          CUMBERLAND                   MD     Internal Medicine                S        METOPROLOL TARTRATE     METOPROLOL TARTRATE        14.0                 33                     37.0              1050           183.29             14.0                          None                    33.0               None                          37.0                 1050.0                183.29       = 51.0
+"13-Sep-22 16:27:42" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 16:27:42" - presc_run_data_preprocessing - INFO - perfom_data_clean() is started ...
+"13-Sep-22 16:32:12" - presc_run_data_preprocessing - INFO - perform_data_clean is completed.
+"13-Sep-22 16:32:12" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_city_sel
+"13-Sep-22 16:32:12" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 16:32:12" - validations - INFO - 
+ 	city state_id            state_name           county_name  population                                               zips
+    NEW YORK       NY              NEW YORK              NEW YORK    18713220  11229 11226 11225 11224 11222 11221 11220 1138...
+ LOS ANGELES       CA            CALIFORNIA           LOS ANGELES    12750807  90291 90293 90292 91316 91311 90037 90031 9000...
+     CHICAGO       IL              ILLINOIS                  COOK     8604203  60018 60649 60641 60640 60643 60642 60645 6064...
+       MIAMI       FL               FLORIDA            MIAMI-DADE     6445545  33129 33125 33126 33127 33128 33149 33144 3314...
+      DALLAS       TX                 TEXAS                DALLAS     5743938  75287 75098 75233 75254 75251 75252 75253 7503...
+PHILADELPHIA       PA          PENNSYLVANIA          PHILADELPHIA     5649300  19154 19151 19150 19153 19152 19102 19103 1910...
+     HOUSTON       TX                 TEXAS                HARRIS     5464251  77069 77068 77061 77060 77063 77062 77065 7706...
+     ATLANTA       GA               GEORGIA                FULTON     5449398  30334 30331 30332 30309 30308 30305 30307 3030...
+  WASHINGTON       DC  DISTRICT OF COLUMBIA  DISTRICT OF COLUMBIA     5379184  20010 20011 20012 20015 20228 20520 20307 2041...
+      BOSTON       MA         MASSACHUSETTS               SUFFOLK     4688346  02120 02121 02122 02124 02125 02126 02127 0212...
+"13-Sep-22 16:32:12" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 16:32:12" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_fact_sel
+"13-Sep-22 16:32:12" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 16:33:31" - validations - INFO - 
+ 	presc_id     presc_city presc_state              presc_spclt  years_of_exp                       drug_name  trx_cnt  total_day_supply  total_drug_cost country_name presc_fullname
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            46                      PREDNISONE       32               220           105.85          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            32                    AZITHROMYCIN       14                76           186.00          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            48                     AMOXICILLIN       20               200           114.84          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            51          FLUTICASONE PROPIONATE       15               570           160.94          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            40                      CEPHALEXIN       12               117            89.43          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            32               CIPROFLOXACIN HCL       11                88            59.09          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            37  AMOXICILLIN-CLAVULANATE POTASS       16               154           227.62          USA   DIANA BURICK
+-2147479517  DOUGLASSVILLE          PA      Physician Assistant            39   SULFAMETHOXAZOLE-TRIMETHOPRIM       22               191           106.78          USA   DIANA BURICK
+-2147477479      TERRYTOWN          LA  Obstetrics & Gynecology            51                     FLUCONAZOLE       26               216           230.50          USA     IAN NGUYEN
+-2147471036         TEMPLE          TX      Physician Assistant            31                     PEN NEEDLES       13              1210           377.15          USA    ERIKA LEIGH
+"13-Sep-22 16:33:31" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 16:33:31" - validations - INFO - The DateFame Schema Validation for Dataframe df_fact_sel...
+"13-Sep-22 16:33:31" - root - INFO - The DataFame df_fact_sel schema is: 
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(presc_id,IntegerType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(presc_city,StringType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(presc_state,StringType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(presc_spclt,StringType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(years_of_exp,IntegerType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(drug_name,StringType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(trx_cnt,IntegerType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(total_day_supply,IntegerType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(total_drug_cost,DoubleType,true)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(country_name,StringType,false)
+"13-Sep-22 16:33:31" - validations - INFO - 	StructField(presc_fullname,StringType,false)
+"13-Sep-22 16:33:31" - validations - INFO - The DataFrame Schema Validation is Completed.
+"13-Sep-22 16:33:31" - presc_run_data_transform - INFO - Transform - city_report() is started...
+"13-Sep-22 16:33:31" - presc_run_data_transform - INFO - Transform - city_report() is completed...
+"13-Sep-22 16:33:31" - presc_run_data_transform - INFO - Transform - top_5_Prescribers() is started...
+"13-Sep-22 16:33:31" - presc_run_data_transform - INFO - Transform - top_5_Prescribers() is completed...
+"13-Sep-22 16:33:31" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_city_final
+"13-Sep-22 16:33:31" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 16:34:35" - validations - INFO - 
+ 	city  state_name      county_name  population  zip_counts  trx_counts  presc_counts
+REHOBOTH BEACH    DELAWARE           SUSSEX        1546           1       46589            42
+ TRAVERSE CITY    MICHIGAN   GRAND TRAVERSE       50522           3      617013           566
+        HELENA     MONTANA  LEWIS AND CLARK       52936           6      183806           195
+       MIRAMAR     FLORIDA          BROWARD      141191           4      246597           264
+   GARDEN CITY     GEORGIA          CHATHAM        8713           3        1161             9
+       SALINAS  CALIFORNIA         MONTEREY      190972           5      459092           413
+        FRASER    MICHIGAN           MACOMB       14480           1       13556            62
+       ANAHEIM  CALIFORNIA           ORANGE      350365          16     1588424          1030
+      SHAKOPEE   MINNESOTA            SCOTT       41570           1       81538            69
+      PEARLAND       TEXAS         BRAZORIA      122460           5      194291           185
+"13-Sep-22 16:34:35" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 16:34:35" - validations - INFO - The DateFame Schema Validation for Dataframe df_city_final...
+"13-Sep-22 16:34:35" - root - INFO - The DataFame df_city_final schema is: 
+"13-Sep-22 16:34:35" - validations - INFO - 	StructField(city,StringType,true)
+"13-Sep-22 16:34:35" - validations - INFO - 	StructField(state_name,StringType,true)
+"13-Sep-22 16:34:35" - validations - INFO - 	StructField(county_name,StringType,true)
+"13-Sep-22 16:34:35" - validations - INFO - 	StructField(population,IntegerType,true)
+"13-Sep-22 16:34:35" - validations - INFO - 	StructField(zip_counts,IntegerType,true)
+"13-Sep-22 16:34:35" - validations - INFO - 	StructField(trx_counts,LongType,true)
+"13-Sep-22 16:34:35" - validations - INFO - 	StructField(presc_counts,LongType,false)
+"13-Sep-22 16:34:35" - validations - INFO - The DataFrame Schema Validation is Completed.
+"13-Sep-22 16:34:35" - validations - INFO - The DataFrame Validation by top 10 record df_rop10_rec() is started for Dataframedf_presc_final
+"13-Sep-22 16:34:35" - validations - INFO - The DataFrame top 10 recors are:
+"13-Sep-22 16:36:04" - validations - INFO - 
+ 	presc_id     presc_fullname presc_state country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost
+2036256032        TODD SUMNER          AA          USA            33       62               148           356.28
+2036256032        TODD SUMNER          AA          USA            38       60               385           258.33
+-2046463267     GEORGE CASSIDY          AA          USA            49       45               180           208.76
+2036408029        RYAN MEHRER          AA          USA            45       38               244           151.01
+-2117083349   CATHERINE ROGERS          AA          USA            49       35              1050           261.30
+2076581050          ULKER TOK          AZ          USA            35     3242            114116        160195.15
+2056377625  ANDREW RABINOWITZ          AZ          USA            31     3132            216274         76028.99
+-2066947266       JASON LEVINE          AZ          USA            44     2323             88055         32106.45
+-1672033807      NEIL ATODARIA          AZ          USA            42     2281            148209         50318.98
+-2117454907        RAVI BHALLA          AZ          USA            33     2081            101348        125539.09
+"13-Sep-22 16:36:04" - validations - INFO - The DataFame validation by top 10 record df_top_ref() is completed
+"13-Sep-22 16:36:04" - validations - INFO - The DateFame Schema Validation for Dataframe df_presc_final...
+"13-Sep-22 16:36:04" - root - INFO - The DataFame df_presc_final schema is: 
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(presc_id,IntegerType,true)
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(presc_fullname,StringType,false)
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(presc_state,StringType,true)
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(country_name,StringType,false)
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(years_of_exp,IntegerType,true)
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(trx_cnt,IntegerType,true)
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(total_day_supply,IntegerType,true)
+"13-Sep-22 16:36:04" - validations - INFO - 	StructField(total_drug_cost,DoubleType,true)
+"13-Sep-22 16:36:04" - validations - INFO - The DataFrame Schema Validation is Completed.
+"13-Sep-22 16:36:04" - presc_run_data_extraction - INFO - Extraction - extract_files() is started...
+"13-Sep-22 16:37:07" - presc_run_data_extraction - INFO - Extraction - extract_files() is completed...
+"13-Sep-22 16:37:07" - presc_run_data_extraction - INFO - Extraction - extract_files() is started...
+"13-Sep-22 16:38:50" - presc_run_data_extraction - INFO - Extraction - extract_files() is completed...
+"13-Sep-22 16:38:50" - root - INFO - presc_run_pipeline.py is Completed.
