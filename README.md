@@ -1,7 +1,7 @@
 # US prescribers reports: Project overview
 + Create two reports on detail of prescribers in US. 1. Reported number of prescribers and total prescription prescibed of each city. 2. Reported Top 50 prescribers in each state
 + Preprocessed and transform data on YARN by pyspark and SQL command for report generataion 
-+ Persist data in hive and transfering data to AWS S3 and Azure Blobs.
++ Stored reformatted data in Hadoop distributed file system and persisted data on Amazon S3.
 + Perform an unit test to make sure functions were applied correctly.
 
 ## Data Resource
@@ -52,5 +52,5 @@ Top 5 prescribers with highest trx_cnt per each state consider the prescribers o
     Total Drug Cost
     
 ## data storage and persisting
-Created reports were stored as json and orc files. Files were persisted at hive.
+Created reports were stored as json and orc files. 
 Copys of reports were also transfered to AWS S3 and Azure Blob according to clients' specific requirments.
